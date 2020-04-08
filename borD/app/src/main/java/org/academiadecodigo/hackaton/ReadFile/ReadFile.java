@@ -6,14 +6,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
-public class ReadFile {
+public class ReadFile  {
 
-    private List<String> list;
+    private ArrayList<String> list;
 
     public ReadFile(String urlString) throws IOException {
-      list = new ArrayList<>();
+      list = new ArrayList<String>();
       BufferedReader reader = new BufferedReader(
       new InputStreamReader(
       new ConnectionController(urlString).getInputStream(), "UTF-8"));
@@ -39,7 +38,7 @@ public class ReadFile {
         list.add(line);
     }
 
-    public List<String> getList(){
+    public ArrayList<String> getList(){
         return list;
     }
 }

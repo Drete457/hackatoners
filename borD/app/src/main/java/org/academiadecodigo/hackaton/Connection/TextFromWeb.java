@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackaton.Connection;
 
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -10,6 +11,7 @@ public class TextFromWeb {
     TextFromWeb(String urlString){
       try {
           feedUrl = new URL(urlString).openConnection();
+          feedUrl.setConnectTimeout(60000);
       } catch (Exception ex){
           ex.printStackTrace();
       }

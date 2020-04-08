@@ -10,14 +10,13 @@ import org.academiadecodigo.hackaton.Buttons.MuteButton;
 import org.academiadecodigo.hackaton.Sound.Sound;
 
 import java.io.IOException;
-import java.util.List;
-
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private MultiWaveHeader waveHeader;
     private Sound sound;
     private MuteButton mute;
-    private List<String> list;
+    private ArrayList<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         waveHeader = findViewById(R.id.wave_header);
         background();
 
-        //getList("https://textuploader.com/14pyk");
+        getList("https://textuploader.com/14pyk");
 
         sound = new Sound(this);
         mute = new MuteButton(sound);

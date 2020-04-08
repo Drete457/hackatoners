@@ -1,6 +1,5 @@
 package org.academiadecodigo.hackaton.Connection;
 
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -14,5 +13,4 @@ public class ConnectionController {
     public InputStream getInputStream(){
         return inputStream;
     }
-
 }
