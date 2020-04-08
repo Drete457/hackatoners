@@ -2,28 +2,20 @@ package org.academiadecodigo.hackaton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.scwang.wave.MultiWaveHeader;
 
 import org.academiadecodigo.hackaton.Categories.ReadFile;
+import org.academiadecodigo.hackaton.buttons.MuteButton;
+
 import java.io.IOException;
 import java.util.List;
 
-import static org.academiadecodigo.hackaton.R.id.muteButton;
 
 public class MainActivity extends AppCompatActivity {
     private MultiWaveHeader waveHeader;
     private Sound sound;
+    private MuteButton mute;
     private List<String> list;
 
     @Override
@@ -33,21 +25,11 @@ public class MainActivity extends AppCompatActivity {
         waveHeader = findViewById(R.id.wave_header);
         background();
 
-       // getList("https://github.com/Drete457/hackatoners/blob/file/borD/app/src/main/res/raw/Categorias.txt");
+        //getList("https://github.com/Drete457/hackatoners/blob/file/borD/app/src/main/res/raw/categorias.txt");
 
         sound = new Sound(this);
-        muteButton();
+        mute = new MuteButton(sound);
 
-    }
-
-    private void muteButton(){
-        FloatingActionButton myFab = findViewById(muteButton);
-        myFab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                sound.changeState();
-                Toast.makeText(MainActivity.this, sound.checkState(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     private void getList(String urlString) {

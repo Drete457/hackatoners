@@ -7,7 +7,7 @@ import android.media.MediaPlayer;
 
 
 
-class Sound {
+public class Sound {
 
     private MediaPlayer mediaPlayer;
 
@@ -73,4 +73,7 @@ class Sound {
 
     }
 
+    public MainActivity getMain(){
+        return main;
+    }
 }
