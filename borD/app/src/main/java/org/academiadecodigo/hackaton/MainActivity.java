@@ -2,14 +2,19 @@ package org.academiadecodigo.hackaton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.widget.TextView;
 
 import com.scwang.wave.MultiWaveHeader;
 
 public class MainActivity extends AppCompatActivity {
     MultiWaveHeader waveHeader;
+    MediaPlayer mediaPlayer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         waveHeader = findViewById(R.id.wave_header);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.startmusicedit2);
 
         waveHeader.setVelocity(1);
         waveHeader.setProgress(1);
@@ -24,5 +30,7 @@ public class MainActivity extends AppCompatActivity {
         waveHeader.setStartColor(0xebebeb);
         waveHeader.setCloseColor(0xababab);
         waveHeader.isRunning();
+        mediaPlayer.start();
+
     }
 }
