@@ -33,13 +33,15 @@ public class MainActivity extends AppCompatActivity {
         waveHeader = findViewById(R.id.wave_header);
         background();
 
-        getList();
+       // getList("https://github.com/Drete457/hackatoners/blob/file/borD/app/src/main/res/raw/Categorias.txt");
+
         sound = new Sound(this);
+        muteButton();
 
     }
 
     private void muteButton(){
-        FloatingActionButton myFab = (FloatingActionButton) findViewById(muteButton);
+        FloatingActionButton myFab = findViewById(muteButton);
         myFab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 sound.changeState();

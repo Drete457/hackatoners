@@ -29,7 +29,7 @@ public class ReadFile {
             }
 
             reader.close();
-            getList(list);
+            getList();
         } catch (Exception ex){
             ex.printStackTrace();
         }
@@ -39,7 +39,7 @@ public class ReadFile {
         list.add(line);
     }
 
-    public List<String> getList(List<String> list){
+    public List<String> getList(){
         return list;
     }
 }
