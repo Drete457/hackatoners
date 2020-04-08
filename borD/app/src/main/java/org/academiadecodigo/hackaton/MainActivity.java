@@ -2,24 +2,22 @@ package org.academiadecodigo.hackaton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.scwang.wave.MultiWaveHeader;
 
-import static org.academiadecodigo.hackaton.R.id.muteButton;
+import org.academiadecodigo.hackaton.ReadFile.ReadFile;
+import org.academiadecodigo.hackaton.Buttons.MuteButton;
+import org.academiadecodigo.hackaton.Sound.Sound;
+
+import java.io.IOException;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
     private MultiWaveHeader waveHeader;
     private Sound sound;
+    private MuteButton mute;
+    private List<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +26,20 @@ public class MainActivity extends AppCompatActivity {
         waveHeader = findViewById(R.id.wave_header);
         background();
 
-        sound = new Sound(this);
+        //getList("https://textuploader.com/14pyk");
 
-        FloatingActionButton myFab = (FloatingActionButton) findViewById(muteButton);
-        myFab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                sound.changeState();
-                Toast.makeText(MainActivity.this, sound.checkState(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        //Cenas
+        sound = new Sound(this);
+        mute = new MuteButton(sound);
+
+    }
+
+    private void getList(String urlString) {
+        try {
+            list = new ReadFile(urlString).getList();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
     }
 
     private void background(){
