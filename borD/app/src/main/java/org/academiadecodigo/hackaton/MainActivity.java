@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         waveHeader = findViewById(R.id.wave_header);
         background();
 
-        getList("https://textuploader.com/14pyk");
+        getList("https://github.com/Drete457/hackatoners/blob/master/borD/app/src/main/res/raw/categorias.txt");
 
 
         sound = new Sound(this);
-        mute = new MuteButton(sound);
+        mute = new MuteButton(sound, this);
     }
 
     private void getList(final String urlString) {

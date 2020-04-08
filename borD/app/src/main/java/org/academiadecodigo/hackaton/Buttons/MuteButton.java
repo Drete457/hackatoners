@@ -4,6 +4,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.Sound.Sound;
 
 import static org.academiadecodigo.hackaton.R.id.muteButton;
@@ -11,19 +13,18 @@ import static org.academiadecodigo.hackaton.R.id.muteButton;
 public class MuteButton {
     private Sound sound;
 
-    public MuteButton(Sound sound){
+    public MuteButton(Sound sound, MainActivity main){
         this.sound = sound;
-        muteButton();
+        muteButton(main);
     }
 
-    private void muteButton(){
-        FloatingActionButton myFab = sound.getMain().findViewById(muteButton);
+    private void muteButton(final MainActivity main){
+        FloatingActionButton myFab = main.findViewById(muteButton);
         myFab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 sound.changeState();
-                Toast.makeText(sound.getMain(), sound.checkState(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(main, sound.checkState(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
 }
