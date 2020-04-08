@@ -3,6 +3,8 @@ package org.academiadecodigo.hackaton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+
 import com.scwang.wave.MultiWaveHeader;
 
 import org.academiadecodigo.hackaton.ReadFile.ReadFile;
@@ -25,20 +27,24 @@ public class MainActivity extends AppCompatActivity {
         waveHeader = findViewById(R.id.wave_header);
         background();
 
-        //getList("https://textuploader.com/14pyk");
+        getList("https://textuploader.com/14pyk");
+
 
         sound = new Sound(this);
         mute = new MuteButton(sound);
-
     }
 
-    private void getList(String urlString) {
-        try {
-            list = new ReadFile(urlString).getList();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
+    private void getList(final String urlString) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                   try {
+                    list = new ReadFile(urlString).getList();
+                   } catch (IOException ex) {
+                       Log.d("BuildList", "Build the list: " + ex.getLocalizedMessage());
+                   }
+                }
+            }).start();
     }
 
     private void background(){

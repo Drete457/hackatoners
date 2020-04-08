@@ -7,19 +7,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class ReadFile implements Runnable {
+public class ReadFile {
 
     private ArrayList<String> list;
-    private BufferedReader reader;
 
     public ReadFile(String urlString) throws IOException {
       list = new ArrayList<String>();
-      reader = new BufferedReader(
+     BufferedReader reader = new BufferedReader(
       new InputStreamReader(
       new ConnectionController(urlString).getInputStream(), "UTF-8"));
+      readFile(reader);
     }
 
-    private void readFile(){
+    private void readFile(BufferedReader reader){
         try {
             String line = null;
 
@@ -40,10 +40,5 @@ public class ReadFile implements Runnable {
 
     public ArrayList<String> getList(){
         return list;
-    }
-
-    @Override
-    public void run() {
-        readFile();
     }
 }

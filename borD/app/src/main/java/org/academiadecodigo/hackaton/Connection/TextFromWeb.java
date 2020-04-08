@@ -1,6 +1,6 @@
 package org.academiadecodigo.hackaton.Connection;
 
-import java.net.HttpURLConnection;
+import android.util.Log;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -13,7 +13,7 @@ public class TextFromWeb {
           feedUrl = new URL(urlString).openConnection();
           feedUrl.setConnectTimeout(60000);
       } catch (Exception ex){
-          ex.printStackTrace();
+          Log.d("Connection", "Reading the file: " + ex.getLocalizedMessage());
       }
     }
 
