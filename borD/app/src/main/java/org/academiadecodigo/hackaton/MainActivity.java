@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         waveHeader = findViewById(R.id.wave_header);
         background();
 
-        getList("https://textuploader.com/14pyk");
+        //getList("https://textuploader.com/14pyk");
 
         sound = new Sound(this);
         mute = new MuteButton(sound);
