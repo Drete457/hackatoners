@@ -6,7 +6,7 @@ class Sound {
     private MediaPlayer mediaPlayer;
 
     public Sound(MainActivity main){
-        mediaPlayer = MediaPlayer.create(main.getApplicationContext(), R.raw.startmusicedit2);
+        mediaPlayer = MediaPlayer.create(main.getApplicationContext(), R.raw.startmusiclong);
         start();
     }
 
