@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackaton.connection;
+package org.academiadecodigo.hackaton.Connection;
 
 import java.net.URL;
 import java.net.URLConnection;

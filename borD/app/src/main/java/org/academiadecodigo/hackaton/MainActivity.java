@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.scwang.wave.MultiWaveHeader;
 
-import org.academiadecodigo.hackaton.Categories.ReadFile;
-import org.academiadecodigo.hackaton.buttons.MuteButton;
+import org.academiadecodigo.hackaton.ReadFile.ReadFile;
+import org.academiadecodigo.hackaton.Buttons.MuteButton;
+import org.academiadecodigo.hackaton.Sound.Sound;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         waveHeader = findViewById(R.id.wave_header);
         background();
 
-        //getList("https://github.com/Drete457/hackatoners/blob/file/borD/app/src/main/res/raw/categorias.txt");
+        //getList("https://textuploader.com/14pyk");
 
         sound = new Sound(this);
         mute = new MuteButton(sound);

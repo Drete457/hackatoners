@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackaton.connection;
+package org.academiadecodigo.hackaton.Connection;
 
 
 import java.io.IOException;

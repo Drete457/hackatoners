@@ -1,6 +1,6 @@
-package org.academiadecodigo.hackaton.Categories;
+package org.academiadecodigo.hackaton.ReadFile;
 
-import org.academiadecodigo.hackaton.connection.ConnectionController;
+import org.academiadecodigo.hackaton.Connection.ConnectionController;
 
 import java.io.BufferedReader;
 import java.io.IOException;

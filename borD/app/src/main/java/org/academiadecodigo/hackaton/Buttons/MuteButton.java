@@ -1,10 +1,10 @@
-package org.academiadecodigo.hackaton.buttons;
+package org.academiadecodigo.hackaton.Buttons;
 
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import org.academiadecodigo.hackaton.Sound;
+import org.academiadecodigo.hackaton.Sound.Sound;
 
 import static org.academiadecodigo.hackaton.R.id.muteButton;
 
