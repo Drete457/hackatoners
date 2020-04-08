@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, sound.checkState(), Toast.LENGTH_SHORT).show();
             }
         });
+        //Cenas
     }
 
     private void background(){
