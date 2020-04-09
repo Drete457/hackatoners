@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-thin"
-                android:text="Bored?"
+                android:text="Bored  ?"
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"
                 android:background="@drawable/buttonshape"
