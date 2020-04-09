@@ -6,11 +6,12 @@ import org.academiadecodigo.hackaton.ReadFile.CreateList;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    static String websiteToOpen = "";
 
     private ArrayList<String> completeList;
     private ArrayList<String> webSites;
     private ArrayList<String> chooseOptions;
-    private ArrayList<Integer> selectOptions = new ArrayList<>();
+    private ArrayList<Integer> selectOptions;
 
     public void setCompleteList(ArrayList<String> completeList) {
         this.completeList = completeList;
@@ -34,15 +35,21 @@ public class MainActivity extends AppCompatActivity {
 
     public String randomChoose(){
         ArrayList<String> randomSite = new ArrayList<>();
-        
+
+        if (webSites.isEmpty()){
+            webSites.add("http://noInternetConnection");
+        }
+
         if (selectOptions.isEmpty()) {
             randomSite.addAll(webSites);
         } else {
             randomSite = new BootStrap().filterWebSite(selectOptions, chooseOptions, completeList);
         }
+
         int index = (int) (Math.random() * randomSite.size());
-        System.out.println(randomSite.size());
-        return randomSite.get(index);
+
+        websiteToOpen = randomSite.get(index);
+        return websiteToOpen;
     }
 
     @Override
@@ -54,8 +61,4 @@ public class MainActivity extends AppCompatActivity {
         new BootStrap().getBootStrap(this);
         new CreateList(urlString, this);
     }
-
-
-
-
 }
