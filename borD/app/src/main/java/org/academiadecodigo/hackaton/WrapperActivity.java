@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class WrapperActivity extends AppCompatActivity {
 
@@ -18,5 +20,13 @@ public class WrapperActivity extends AppCompatActivity {
         webView.canGoBack();
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(MainActivity.websiteToOpen);
+
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                view.loadUrl(request.getUrl().toString());
+                return false;
+            }
+        });
     }
 }
