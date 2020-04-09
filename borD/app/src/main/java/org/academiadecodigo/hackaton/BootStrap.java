@@ -16,6 +16,10 @@ public class BootStrap {
        Sound sound = new Sound(main);
        MuteButton mute = new MuteButton(sound, main);
        RandomButton random = new RandomButton(main);
+       main.setCompleteList(new ArrayList<String>());
+       main.setChooseOptions(new ArrayList<String>());
+       main.setWebSites(new ArrayList<String>());
+       main.setSelectOptions(new ArrayList<Integer>());
        return this;
     }
 
