@@ -6,6 +6,7 @@ import org.academiadecodigo.hackaton.ReadFile.CreateList;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    static String websiteToOpen = "";
 
     private ArrayList<String> completeList;
     private ArrayList<String> webSites;
@@ -46,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         int index = (int) (Math.random() * randomSite.size());
-        return randomSite.get(index);
+
+        websiteToOpen = randomSite.get(index);
+        return websiteToOpen;
     }
 
     @Override
