@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-thin"
             android:gravity="center_horizontal"
-            android:text="Are you bored?"
+            android:text="   "
             android:textSize="21dp" />
 
         <LinearLayout
@@ -40,9 +40,15 @@
                 android:id="@+id/randomButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:soundEffectsEnabled="true"
-                android:text="Hit me up"
-                tools:visibility="visible" />
+                android:fontFamily="sans-serif-thin"
+                android:text="Bored?"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:background="@drawable/buttonshape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"/>
 
         </LinearLayout>
 

@@ -3,14 +3,9 @@ package org.academiadecodigo.hackaton.View;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
-
 import com.scwang.wave.MultiWaveHeader;
-
 import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static java.lang.Thread.sleep;
 
@@ -34,7 +29,7 @@ public class BackGround {
         main.getSupportActionBar().hide();
     }
 
-    private void background(MainActivity main){
+    private void background(MainActivity main) {
         final ColorPallete color = new ColorPallete();
         main.setContentView(R.layout.activity_main);
         waveHeader = main.findViewById(R.id.wave_header);
@@ -46,13 +41,13 @@ public class BackGround {
             @Override
             public void run() {
                 try {
-                while (true) {
-                    waveHeader.setStartColor(color.getRandomColor());
-                    waveHeader.setCloseColor(color.getRandomColor());
-                    sleep(3000);
-                }
+                    while (true) {
+                        waveHeader.setStartColor(color.getRandomColor());
+                        waveHeader.setCloseColor(color.getRandomColor());
+                        sleep(3000);
+                    }
                 } catch (InterruptedException e) {
-                        Log.d("BackGround", "Wave: " + e.getLocalizedMessage());
+                    Log.d("BackGround", "Wave: " + e.getLocalizedMessage());
                 }
             }
         }).start();
