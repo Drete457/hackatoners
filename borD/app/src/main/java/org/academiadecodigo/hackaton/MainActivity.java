@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         String urlString = "https://raw.githubusercontent.com/Drete457/hackatoners/master/borD/app/src/main/res/raw/categorias.txt";
 

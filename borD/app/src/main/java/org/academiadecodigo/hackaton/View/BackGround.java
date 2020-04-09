@@ -34,9 +34,6 @@ public class BackGround {
         waveHeader.setVelocity(1);
         waveHeader.setProgress(1);
         waveHeader.setWaveHeight(85);
-        waveHeader.setStartColor(0xebabab);
-        waveHeader.setCloseColor(0xababab);
-        waveHeader.isRunning();
     }
 
 

@@ -10,8 +10,10 @@ import org.academiadecodigo.hackaton.R;
 import org.academiadecodigo.hackaton.WrapperActivity;
 
 public class RandomButton {
+    MainActivity main;
 
     public RandomButton(MainActivity main){
+        this.main = main;
         start(main);
     }
 
@@ -29,7 +31,9 @@ public class RandomButton {
     }
 
     public void goToAnotherActivity(View view) {
+        WrapperActivity.setMain(main);
         Intent intent = new Intent(view.getContext(), WrapperActivity.class);
-        view.getContext().startActivity(intent);}
+        view.getContext().startActivity(intent);
     }
+}
 
