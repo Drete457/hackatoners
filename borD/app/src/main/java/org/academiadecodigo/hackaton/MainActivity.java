@@ -3,6 +3,8 @@ package org.academiadecodigo.hackaton;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import org.academiadecodigo.hackaton.ReadFile.CreateList;
+import org.academiadecodigo.hackaton.View.Meme;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         String urlString = "https://raw.githubusercontent.com/Drete457/hackatoners/master/borD/app/src/main/res/raw/categorias.txt";
-
+        String urlString2 = "https://meme-api.herokuapp.com/gimme";
         new BootStrap().getBootStrap(this);
         new CreateList(urlString, this);
+        new Meme().getMeme(urlString2);
     }
 }

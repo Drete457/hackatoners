@@ -1,12 +1,14 @@
 package org.academiadecodigo.hackaton.Connection;
 
 import android.util.Log;
+
 import java.net.URL;
 import java.net.URLConnection;
 
 public class TextFromWeb {
 
     private URLConnection feedUrl;
+    private URLConnection urlMeme;
 
     TextFromWeb(String urlString){
       try {
