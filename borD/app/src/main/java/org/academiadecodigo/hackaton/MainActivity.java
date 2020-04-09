@@ -1,58 +1,61 @@
 package org.academiadecodigo.hackaton;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
-
-import com.scwang.wave.MultiWaveHeader;
-
-import org.academiadecodigo.hackaton.ReadFile.ReadFile;
-import org.academiadecodigo.hackaton.Buttons.MuteButton;
-import org.academiadecodigo.hackaton.Sound.Sound;
-
-import java.io.IOException;
+import org.academiadecodigo.hackaton.ReadFile.CreateList;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private MultiWaveHeader waveHeader;
-    private Sound sound;
-    private MuteButton mute;
-    private ArrayList<String> list;
+
+    private ArrayList<String> completeList;
+    private ArrayList<String> webSites;
+    private ArrayList<String> chooseOptions;
+    private ArrayList<Integer> selectOptions = new ArrayList<>();
+
+    public void setCompleteList(ArrayList<String> completeList) {
+        this.completeList = completeList;
+    }
+
+    public void setWebSites(ArrayList<String> webSites){
+        this.webSites = webSites;
+    }
+
+    public void setChooseOptions(ArrayList<String> chooseOptions) {
+        this.chooseOptions = chooseOptions;
+    }
+    
+    public void setSelectOptions(ArrayList<Integer> selectOptions){
+        this.selectOptions = selectOptions;
+    }
+
+    public ArrayList<String> getChooseOptions(){
+        return chooseOptions;
+    }
+
+    public String randomChoose(){
+        ArrayList<String> randomSite = new ArrayList<>();
+        
+        if (selectOptions.isEmpty()) {
+            randomSite.addAll(webSites);
+        } else {
+            randomSite = new BootStrap().filterWebSite(selectOptions, chooseOptions, completeList);
+        }
+        int index = (int) (Math.random() * randomSite.size());
+        System.out.println(randomSite.size());
+        return randomSite.get(index);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        waveHeader = findViewById(R.id.wave_header);
-        background();
+        String urlString = "https://raw.githubusercontent.com/Drete457/hackatoners/master/borD/app/src/main/res/raw/categorias.txt";
 
-        getList("https://github.com/Drete457/hackatoners/blob/master/borD/app/src/main/res/raw/categorias.txt");
-
-
-        sound = new Sound(this);
-        mute = new MuteButton(sound, this);
+        new BootStrap().getBootStrap(this);
+        new CreateList(urlString, this);
     }
 
-    private void getList(final String urlString) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                   try {
-                    list = new ReadFile(urlString).getList();
-                   } catch (IOException ex) {
-                       Log.d("BuildList", "Build the list: " + ex.getLocalizedMessage());
-                   }
-                }
-            }).start();
-    }
 
-    private void background(){
-        waveHeader.setVelocity(1);
-        waveHeader.setProgress(1);
-        waveHeader.setWaveHeight(85);
-        waveHeader.setStartColor(0xebebeb);
-        waveHeader.setCloseColor(0xababab);
-        waveHeader.isRunning();
-    }
+
+
 }
