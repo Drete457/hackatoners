@@ -30,7 +30,7 @@ public class SettingButton {
                 final ArrayList itemsSelected = new ArrayList();
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(main);
-                builder.setTitle("Select the type of Content you'd like to see:");
+                builder.setTitle("Topics:");
                 builder.setMultiChoiceItems(items, null,
                   new DialogInterface.OnMultiChoiceClickListener() {
 
