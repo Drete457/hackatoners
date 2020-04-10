@@ -8,7 +8,6 @@ import java.net.URLConnection;
 public class TextFromWeb {
 
     private URLConnection feedUrl;
-    private URLConnection urlMeme;
 
     TextFromWeb(String urlString){
       try {

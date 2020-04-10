@@ -3,6 +3,7 @@ package org.academiadecodigo.hackaton;
 import org.academiadecodigo.hackaton.Buttons.MuteButton;
 import org.academiadecodigo.hackaton.Buttons.RandomButton;
 import org.academiadecodigo.hackaton.Buttons.SettingButton;
+import org.academiadecodigo.hackaton.Json.MemeJson;
 import org.academiadecodigo.hackaton.Sound.Sound;
 import org.academiadecodigo.hackaton.View.BackGround;
 
@@ -10,8 +11,8 @@ import java.util.ArrayList;
 
 public class BootStrap {
 
-    public BootStrap getBootStrap(MainActivity main){
-       BackGround backGround = new BackGround(main);
+    public BootStrap getBootStrap(MainActivity main, String urlString){
+       BackGround backGround = new BackGround(main, urlString);
        SettingButton settingButton = new SettingButton(main);
        Sound sound = new Sound(main);
        MuteButton mute = new MuteButton(sound, main);
