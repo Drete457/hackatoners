@@ -2,9 +2,11 @@ package org.academiadecodigo.hackaton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import org.academiadecodigo.hackaton.Meme.Meme;
+
 import org.academiadecodigo.hackaton.ReadFile.CreateList;
 import java.util.ArrayList;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -64,9 +66,10 @@ public class MainActivity extends AppCompatActivity {
         String urlString = "https://raw.githubusercontent.com/Drete457/hackatoners/master/borD/app/src/main/res/raw/categorias.txt";
         String urlString2 = "https://meme-api.herokuapp.com/gimme";
         fixedPool = Executors.newCachedThreadPool();
-        new BootStrap().getBootStrap(this, urlString2);
-        new CreateList(urlString, this);
+        new BootStrap().getBootStrap(this);
+        fixedPool.submit(new CreateList(urlString, this));
+        fixedPool.submit(new Meme(urlString2, this));
+        //System.out.println("memememeeeeeeeeeeeeeee: " + memeUrl);
     }
-
 
 }
