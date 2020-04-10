@@ -78,7 +78,17 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="left"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="197dp"
+                android:layout_height="163dp"
+                app:srcCompat="@android:drawable/btn_dialog"
+                tools:layout_editor_absoluteX="107dp"
+                tools:layout_editor_absoluteY="16dp" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

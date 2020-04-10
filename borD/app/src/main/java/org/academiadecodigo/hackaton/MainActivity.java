@@ -1,7 +1,10 @@
 package org.academiadecodigo.hackaton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.ImageView;
 import org.academiadecodigo.hackaton.ReadFile.CreateList;
 import java.util.ArrayList;
 
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         return chooseOptions;
     }
 
+
     public String randomChoose(){
         ArrayList<String> randomSite = new ArrayList<>();
 
@@ -56,8 +60,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         String urlString = "https://raw.githubusercontent.com/Drete457/hackatoners/master/borD/app/src/main/res/raw/categorias.txt";
-
-        new BootStrap().getBootStrap(this);
+        String urlString2 = "https://meme-api.herokuapp.com/gimme";
+        new BootStrap().getBootStrap(this, urlString2);
         new CreateList(urlString, this);
     }
+
+
 }

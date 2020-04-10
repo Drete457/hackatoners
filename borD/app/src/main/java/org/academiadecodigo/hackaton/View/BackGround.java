@@ -1,21 +1,33 @@
 package org.academiadecodigo.hackaton.View;
 
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+
 import com.scwang.wave.MultiWaveHeader;
+
+import org.academiadecodigo.hackaton.Json.Meme;
+import org.academiadecodigo.hackaton.Json.MemeJson;
 import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.R;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static java.lang.Thread.sleep;
 
 public class BackGround {
 
     private MultiWaveHeader waveHeader;
+    private MemeJson memeJson;
 
-    public BackGround(MainActivity main){
+    public BackGround(MainActivity main, String urlString){
         minimizeNotificationBar(main);
-        background(main);
+        background(main, urlString);
         disableBars(main);
     }
 
@@ -29,7 +41,7 @@ public class BackGround {
         main.getSupportActionBar().hide();
     }
 
-    private void background(MainActivity main) {
+    private void background(MainActivity main, String urlString) {
         final ColorPallete color = new ColorPallete();
         main.setContentView(R.layout.activity_main);
         waveHeader = main.findViewById(R.id.wave_header);
@@ -53,4 +65,7 @@ public class BackGround {
         }).start();
     }
 
-}
+
+    }
+
+

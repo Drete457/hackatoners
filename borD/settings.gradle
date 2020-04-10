@@ -1,2 +1,3 @@
 rootProject.name='borD'
 include ':app'
+include ':mylibrary'

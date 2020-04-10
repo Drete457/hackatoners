@@ -1,6 +1,7 @@
 package org.academiadecodigo.hackaton.Connection;
 
 import android.util.Log;
+
 import java.net.URL;
 import java.net.URLConnection;
 

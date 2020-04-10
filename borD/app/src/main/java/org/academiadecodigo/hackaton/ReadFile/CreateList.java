@@ -20,10 +20,13 @@ public class CreateList {
             @Override
             public void run() {
                 try {
-                    list = new ReadFile(urlString).getList();
-                    setCompleteList(main);
-                    setWebSites(main);
-                    setSettingOptions(main);
+                    synchronized (this) {
+                        list = new ReadFile(urlString).getList();
+                        setCompleteList(main);
+                        setWebSites(main);
+                        setSettingOptions(main);
+                        notifyAll();
+                    }
                 } catch (IOException ex) {
                     Log.d("BuildList", "Build the list: " + ex.getLocalizedMessage());
                 }
