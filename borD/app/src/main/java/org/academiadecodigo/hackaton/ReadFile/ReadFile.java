@@ -1,7 +1,6 @@
 package org.academiadecodigo.hackaton.ReadFile;
 
 import org.academiadecodigo.hackaton.Connection.ConnectionController;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,29 +1,16 @@
 package org.academiadecodigo.hackaton.View;
 
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
-
 import com.scwang.wave.MultiWaveHeader;
-
-import org.academiadecodigo.hackaton.Json.Meme;
-import org.academiadecodigo.hackaton.Json.MemeJson;
 import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.R;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import static java.lang.Thread.sleep;
 
 public class BackGround {
 
     private MultiWaveHeader waveHeader;
-    private MemeJson memeJson;
 
     public BackGround(MainActivity main, String urlString){
         minimizeNotificationBar(main);

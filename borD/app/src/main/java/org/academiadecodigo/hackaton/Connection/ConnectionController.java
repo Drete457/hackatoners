@@ -1,9 +1,8 @@
 package org.academiadecodigo.hackaton.Connection;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
+
 
 
 public class ConnectionController {

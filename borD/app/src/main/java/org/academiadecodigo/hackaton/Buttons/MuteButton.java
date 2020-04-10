@@ -2,9 +2,7 @@ package org.academiadecodigo.hackaton.Buttons;
 
 import android.view.View;
 import android.widget.Toast;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.Sound.Sound;
 

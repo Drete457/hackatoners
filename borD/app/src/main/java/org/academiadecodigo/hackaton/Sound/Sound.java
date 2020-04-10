@@ -1,7 +1,6 @@
 package org.academiadecodigo.hackaton.Sound;
 
 import android.media.MediaPlayer;
-
 import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.R;
 

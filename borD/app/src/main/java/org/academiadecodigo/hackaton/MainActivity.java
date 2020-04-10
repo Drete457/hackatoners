@@ -1,10 +1,7 @@
 package org.academiadecodigo.hackaton;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.widget.ImageView;
 import org.academiadecodigo.hackaton.ReadFile.CreateList;
 import java.util.ArrayList;
 

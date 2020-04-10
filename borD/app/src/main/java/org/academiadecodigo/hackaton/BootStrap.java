@@ -3,10 +3,8 @@ package org.academiadecodigo.hackaton;
 import org.academiadecodigo.hackaton.Buttons.MuteButton;
 import org.academiadecodigo.hackaton.Buttons.RandomButton;
 import org.academiadecodigo.hackaton.Buttons.SettingButton;
-import org.academiadecodigo.hackaton.Json.MemeJson;
 import org.academiadecodigo.hackaton.Sound.Sound;
 import org.academiadecodigo.hackaton.View.BackGround;
-
 import java.util.ArrayList;
 
 public class BootStrap {

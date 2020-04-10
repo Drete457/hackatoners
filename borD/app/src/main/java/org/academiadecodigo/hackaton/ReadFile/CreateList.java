@@ -1,9 +1,7 @@
 package org.academiadecodigo.hackaton.ReadFile;
 
 import android.util.Log;
-
 import org.academiadecodigo.hackaton.MainActivity;
-
 import java.io.IOException;
 import java.util.ArrayList;
 

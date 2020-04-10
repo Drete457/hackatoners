@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.R;
 import org.academiadecodigo.hackaton.WrapperActivity;

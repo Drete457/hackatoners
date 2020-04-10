@@ -5,12 +5,9 @@ import android.content.DialogInterface;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AlertDialog;
-
 import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.R;
-
 import java.util.ArrayList;
 
 public class SettingButton {
