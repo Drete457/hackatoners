@@ -4,9 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import org.academiadecodigo.hackaton.ReadFile.CreateList;
 import java.util.ArrayList;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     static String websiteToOpen = "";
+
+    static ExecutorService fixedPool;
 
     private ArrayList<String> completeList;
     private ArrayList<String> webSites;
@@ -58,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         String urlString = "https://raw.githubusercontent.com/Drete457/hackatoners/master/borD/app/src/main/res/raw/categorias.txt";
         String urlString2 = "https://meme-api.herokuapp.com/gimme";
+        fixedPool = Executors.newCachedThreadPool();
         new BootStrap().getBootStrap(this, urlString2);
         new CreateList(urlString, this);
     }

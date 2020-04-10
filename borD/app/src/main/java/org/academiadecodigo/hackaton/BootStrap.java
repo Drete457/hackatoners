@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class BootStrap {
 
     public BootStrap getBootStrap(MainActivity main, String urlString){
-       BackGround backGround = new BackGround(main, urlString);
+       BackGround backGround = new BackGround(main);
        SettingButton settingButton = new SettingButton(main);
        Sound sound = new Sound(main);
        MuteButton mute = new MuteButton(sound, main);
@@ -19,6 +19,7 @@ public class BootStrap {
        main.setChooseOptions(new ArrayList<String>());
        main.setWebSites(new ArrayList<String>());
        main.setSelectOptions(new ArrayList<Integer>());
+       MainActivity.fixedPool.submit(backGround);
        return this;
     }
 

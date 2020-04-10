@@ -8,51 +8,55 @@ import org.academiadecodigo.hackaton.MainActivity;
 import org.academiadecodigo.hackaton.R;
 import static java.lang.Thread.sleep;
 
-public class BackGround {
+public class BackGround implements Runnable{
 
     private MultiWaveHeader waveHeader;
+    private MainActivity main;
+    private final ColorPallete color;
 
-    public BackGround(MainActivity main, String urlString){
-        minimizeNotificationBar(main);
-        background(main, urlString);
-        disableBars(main);
+    public BackGround(MainActivity main){
+        this.main = main;
+        color = new ColorPallete();
+        minimizeNotificationBar();
+        background();
+        disableBars();
     }
 
-    private void minimizeNotificationBar(MainActivity main) {
+    private void minimizeNotificationBar() {
         main.requestWindowFeature(Window.FEATURE_NO_TITLE);
         main.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
-    private void disableBars(MainActivity main){
+    private void disableBars(){
         main.getSupportActionBar().hide();
     }
 
-    private void background(MainActivity main, String urlString) {
-        final ColorPallete color = new ColorPallete();
+    private void background() {
+
         main.setContentView(R.layout.activity_main);
         waveHeader = main.findViewById(R.id.wave_header);
         waveHeader.setVelocity(3);
         waveHeader.setProgress(1);
         waveHeader.setWaveHeight(100);
+        waveHeader.setStartColor(color.getRandomColor());
+        waveHeader.setCloseColor(color.getRandomColor());
         waveHeader.isRunning();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    while (true) {
-                        waveHeader.setStartColor(color.getRandomColor());
-                        waveHeader.setCloseColor(color.getRandomColor());
-                        sleep(3000);
-                    }
-                } catch (InterruptedException e) {
-                    Log.d("BackGround", "Wave: " + e.getLocalizedMessage());
-                }
+    }
+
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                waveHeader.setStartColor(color.getRandomColor());
+                waveHeader.setCloseColor(color.getRandomColor());
+                sleep(3000);
             }
-        }).start();
+        } catch (InterruptedException e) {
+            Log.d("BackGround", "Wave: " + e.getLocalizedMessage());
+        }
     }
-
-
-    }
+}
 
 
