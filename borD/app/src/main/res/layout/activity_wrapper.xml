@@ -23,17 +23,38 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteY="731dp">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabSkip"
-            android:background="@drawable/buttonshape"
+        <Button
+            android:id="@+id/buttonSkip"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
+            android:background="@drawable/buttonshape"
             android:clickable="true"
-            app:fabSize="mini"
+            android:fontFamily="sans-serif-thin"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:text="Bored..."
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!--
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSkip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/buttonshape"
+            android:clickable="true"
+            app:fabSize="auto"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@android:drawable/ic_media_next" />
+            app:srcCompat="@drawable/nexticon" />
+            -->
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
