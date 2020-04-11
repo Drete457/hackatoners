@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class BootStrap {
 
+
     public BootStrap getBootStrap(MainActivity main){
        BackGround backGround = new BackGround(main);
        SettingButton settingButton = new SettingButton(main);

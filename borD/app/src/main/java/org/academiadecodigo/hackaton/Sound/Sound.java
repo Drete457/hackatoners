@@ -32,7 +32,6 @@ public class Sound {
         }
         start();
         isPlaying = true;
-
     }
 
     public String checkState(){
