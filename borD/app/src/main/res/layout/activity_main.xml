@@ -15,7 +15,7 @@
         <com.scwang.wave.MultiWaveHeader
             android:id="@+id/wave_header"
             android:layout_width="match_parent"
-            android:layout_height="311dip"></com.scwang.wave.MultiWaveHeader>
+            android:layout_height="320dip"></com.scwang.wave.MultiWaveHeader>
 
         <Space
             android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="5"
-                android:text="Bored?"
+                android:text="@string/bored"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -61,14 +61,26 @@
                 android:id="@+id/muteButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:clickable="true"
-                android:src="@android:drawable/ic_lock_silent_mode"
+                android:padding="0dp"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:src="@drawable/stop"
+                android:visibility="visible"
                 app:backgroundTint="#D8D8D8"
-                app:fabSize="mini"
+                app:borderWidth="0dp"
+                app:fabCustomSize="36dp"
+                app:fabSize="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:maxImageSize="36dp"
+                app:pressedTranslationZ="0dp" />
 
             <ImageButton
                 android:id="@+id/settingsButton"
@@ -86,17 +98,17 @@
                 android:layout_width="305dp"
                 android:layout_height="288dp"
                 android:layout_marginStart="45dp"
-                android:layout_marginTop="43dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="42dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="45dp"
                 android:adjustViewBounds="true"
                 android:cropToPadding="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/muteButton"
-                app:layout_constraintHorizontal_bias="0.692"
+                app:layout_constraintHorizontal_bias="0.421"
                 app:layout_constraintStart_toEndOf="@+id/settingsButton"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.529"
+                app:layout_constraintVertical_bias="0.517"
                 tools:srcCompat="@tools:sample/avatars" />
 
 
